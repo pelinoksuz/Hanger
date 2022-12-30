@@ -37,8 +37,9 @@ const Register = () => {
               email,
               photoURL: downloadURL,
             });
-
+            console.log("user db created")
             await setDoc(doc(db, "userChats", res.user.uid), {});
+            console.log("userChats db created")
             navigate("/");
           } catch (err) {
             console.log(err);
