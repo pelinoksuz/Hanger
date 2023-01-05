@@ -40,6 +40,7 @@ const Register = () => {
             });
             console.log("user db created")
             await setDoc(doc(db, "userChats", res.user.uid), {});
+            await setDoc(doc(db, "events", res.user.uid), {});
             console.log("userChats db created")
             navigate("/");
           } catch (err) {
