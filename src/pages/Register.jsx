@@ -11,6 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    console.log("aaaaaa")
     setLoading(true);
     e.preventDefault();
     const displayName = e.target[0].value;
