@@ -1,5 +1,6 @@
 import Register from "./pages/Register";
 import Home from "./pages/Home";
+import ActualHome from "./pages/ActualHome";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import "./style.scss";
@@ -32,6 +33,8 @@ function App() {
           <Route path="login" element={<Login />}></Route>
           <Route path="register" element={<Register />}></Route>
           <Route path="profile" element={<Profile />}></Route>
+          <Route path="chat" element={<Home/>}></Route>
+          <Route path="actualhome" element={<ActualHome/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
