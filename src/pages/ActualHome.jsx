@@ -4,51 +4,65 @@ import Chat from '../components/Chat';
 import MediaCard from '../components/EventCard';
 import { getDatabase, ref, child, get } from "firebase/database";
 import { Button } from 'antd';
+import MUINavbar from '../components/MUINavbar';
 
 const ActualHome = () => {
 
-    const dbRef = ref(getDatabase());
-    get(child(dbRef, `events/DFbbDbrmJ1RJtxi5uGOLugVTE1E2`)).then((snapshot) => {
-      if (snapshot.exists()) {
-        console.log(snapshot.val());
-        test = snapshot.val();
-      } else {
-        console.log("No data available");
-      }
-    }).catch((error) => {
-      console.error(error);
-    });
-    var test = 5;
     const mockEvent = {
-    date: "2023-02-08",
+    date: "2023-02-14",
     events: "entertainment",
-    location: "Akasya Mall",
-    name: "Cinema Date2",
+    location: "Dinner",
+    name: "Nusr-Et",
     uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam convallis, nunc sit amet mattis pellentesque, dui augue placerat enim, id pellentesque velit est quis justo. Nam aliquet malesuada molestie. Fusce vulputate nibh vitae felis tincidunt, vitae luctus dui luctus. Donec gravida a nibh at venenatis."
+    description: "Just looking for someone that enjoys eating meat to go to dinner together. P.S. Everyone pays for their own food"
     }
     
+    const mockEvent2 = {
+      date: "2023-01-12",
+      events: "entertainment",
+      location: "Bomonti",
+      name: "Babylon",
+      uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2",
+      description: "I'm going to go to Babylon next week, looking for a friend(s) "
+    }
+    const mockEvent3 = {
+        date: "2023-01-21",
+        events: "entertainment",
+        location: "TBD",
+        name: "My home",
+        uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2",
+        description: "Looking for people to worship me and relax with some herbal supplements if you know what I mean"
+    }
     const mockUser = {
-    displayName: "pelin oksuz",
+    displayName: "Kaan Suar",
     email: "pelin.oksuz@gmail.com",
-    photoURL: "https://firebasestorage.googleapis.com/v0/b/hang-f9b0f.appspot.com/o/pelin%20oksuz1672324970399?alt=media&token=3c039cc3-9f74-4780-817e-ddad7a566c3d",
+    photoURL: "https://media.licdn.com/dms/image/C4D03AQH9-hq6M1toZg/profile-displayphoto-shrink_800_800/0/1650889673969?e=1678320000&v=beta&t=mlikYCkZkKriVU_XCIgeoNSJMMr_4wSuTGRsumoIc_4",
     uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2"
     }
     
+    const mockUser2 = {
+      displayName: "Pelin Oksuz",
+      email: "pelin.oksuz@gmail.com",
+      photoURL: "https://i.imgur.com/mziRmNO.png",
+      uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2"
+    }
+    const mockUser3 = {
+        displayName: "Elon",
+        email: "pelin.oksuz@gmail.com",
+        photoURL: "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iS8pcZQodP8Y/v1/1200x-1.jpg",
+        uid: "DFbbDbrmJ1RJtxi5uGOLugVTE1E2"
+    }
     return (
         <div className='home'>
-
-            <div className='container'>
-                    <MediaCard Event={mockEvent} User={mockUser}/>
-                    <MediaCard Event={mockEvent} User={mockUser}/>
-                    <MediaCard Event={mockEvent} User={mockUser}/>
-                    {test}
-                    <Button onClick={dbRef}/>
-                    
-                    
-            </div>
-
-
+          <div className='navbar-container' >
+            <MUINavbar></MUINavbar>
+              <div className='container2'>
+                      <MediaCard Event={mockEvent} User={mockUser}/>
+                      <MediaCard Event={mockEvent2} User={mockUser2}/>
+                      <MediaCard Event={mockEvent3} User={mockUser3}/>
+                      
+              </div>
+          </div>
         </div>
     )
 }

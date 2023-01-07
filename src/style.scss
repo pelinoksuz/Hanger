@@ -13,20 +13,26 @@
       @content;
     }
   }
+  
+
+  
+    
   .home {
     background-color: #a7bcff;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-  
-    .container {
+    
+    .container2 {
       border: 1px solid white;
       border-radius: 10px;
-      width: 65%;
+      
       height: 80%;
       display: flex;
       overflow: hidden;
+      
+      
       @include tablet {
        width: 90%;
       }
@@ -51,6 +57,187 @@
     
         }
      }
+
+    
+     .sidebar_p {
+      flex: 1;
+      background-color: #3e3c61;
+      position: relative;
+
+      .navbar_p {
+        display: flex;
+        align-items: center;
+        background-color: #2f2d52;
+        height: 50px;
+        padding: 10px;
+        justify-content: space-between;
+        color: #ddddf7;
+        
+        img{
+          height: 40px;
+          width:40px;
+          position:fixed;
+          left: 1;
+          right: 1;
+          // margin-left: 1300px;
+          background-color: #ddddf7;
+          border-radius: 35%;
+        }
+        span{
+          padding: 10px;
+          margin-top: 10px;
+        }
+        .user_p {
+          display: block;
+          gap: 10px;
+
+          img {
+            background-color: #ddddf7;
+            height: 150px;
+            width:150px;
+            border-radius: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 3px solid #8da4f1;
+          }
+
+          button {
+            
+            background-color: #5d5b8d;
+            color: #ddddf7;
+            font-size: 10px;
+            border: none;
+            cursor: pointer;
+            
+            @include tablet {
+              position: absolute;
+              bottom: 10px;
+            }
+          }
+        }
+      }
+    }
+      .sidebar {
+        flex: 1;
+        background-color: #3e3c61;
+        position: relative;
+      }
+      button {
+        background-color: #7b96ec;
+        color: white;
+        padding: 10px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+      input {
+        padding: 15px;
+        border: none;
+        width: 250px;
+        height: 15px;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+        
+      }
+      label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #8da4f1;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 10px;
+        height: 25px;
+      }
+      textarea{
+        height: 25px;
+        width: 250px;
+      }
+      button {
+        background-color: #7b96ec;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        border: none;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+      }
+      .submit{
+        background-color: #7b96ec;
+        color: white;
+        padding: 15px;
+        font-weight: bold;
+        border: none;
+        width: 150px;
+        height: 40px;
+        cursor: pointer;
+      }
+      select{
+        padding: 15px;
+        border: none;
+        width: 280px;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+      textarea{
+        padding: 15px;
+        border: none;
+        width: 250px;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+      }
+    }
+    
+    .container {
+      border: 1px solid white;
+      border-radius: 10px;
+      width: 65%;
+      height: 80%;
+      display: flex;
+      overflow: hidden;
+      
+      @include tablet {
+       width: 90%;
+      }
+      .events{
+        display: flex;
+        flex-direction: column;
+        padding:10px;
+        margin: 10px;
+        align-items: center;
+        justify-content: center;
+        .event{
+     
+          padding: auto;
+          margin: auto;
+          
+          color: #ddddf7;
+        }
+        .logo_p {
+          color: #ddddf7;
+          font-weight: bold;
+          font-size: 24px;
+    
+        }
+     }
+
+    
      .sidebar_p {
       flex: 1;
       background-color: #3e3c61;
