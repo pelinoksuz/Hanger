@@ -65,6 +65,7 @@ const UserProfile = () => {
       <div className="navbar_p">
         <div className="user_p">
           <h2 className="logo_p">Biography</h2>
+          <h3 className="logo_p_p"> Positive, a little shy, and someone who loves to laugh. It’s fun to break the rules by hanging, right? </h3>
         </div>
       </div>
 
