@@ -6,6 +6,7 @@ import Eventform from "./Eventform";
 import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../Firebase";
 import chat from "../img/chat.png";
+import { border } from "@mui/system";
 const UserProfile = () => {
   const [myevent, setmyevents] = useState("");
   const { currentUser } = useContext(AuthContext);
@@ -68,31 +69,39 @@ const UserProfile = () => {
           <h3 className="logo_p_p"> Positive, a little shy, and someone who loves to laugh. It’s fun to break the rules by hanging, right? </h3>
         </div>
       </div>
-
-      <button onClick={(e) => open()}>Create new event</button>
-      <Eventform somepop={popup} />
-
-      <div className="events">
-        {popup === "close" ? <h3 className="logo_p">Your Event List:</h3> : ""}
-
-        {myevent.events &&
-          popup === "close" &&
-          myevent.events.map((item, key) => (
-            <span key={key}>
-              <span className="event">
-                Event Name : {myevent.events[key].name}
-              </span>
-              <span className="event">
-                Location : {myevent.events[key].location}
-              </span>
-              <span className="event">
-                Desc : {myevent.events[key].description}
-              </span>
-              <span className="event">Date : {myevent.events[key].date}</span>
-            </span>
-          ))}
+      <div style={{display: 'flex',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      }}>
+        <button  onClick={(e) => open()}>Create new event</button>
+        <Eventform somepop={popup} />
+    
+        <div className="events">
+          {popup === "close" ? <h3 className="logo_p">Your Event List:</h3> : ""}
+  
+          {myevent.events &&
+            popup === "close" &&
+            myevent.events.map((item, key) => (
+              <div style={{margin: 10}} key={key}>
+                <span className="event">
+                  Event Name : {myevent.events[key].name}
+                </span>
+                <br/>
+                <span className="event">
+                  Location : {myevent.events[key].location}
+                </span>
+                <br/>
+                <span className="event">
+                  Desc : {myevent.events[key].description}
+                </span>
+                <br/>
+                <span className="event">Date : {myevent.events[key].date}</span>
+              </div>
+            ))}
+        </div>
       </div>
     </div>
+      
   );
 };
 
