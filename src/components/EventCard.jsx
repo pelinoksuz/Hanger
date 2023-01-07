@@ -11,14 +11,14 @@ export default function MediaCard({ Event, User }) {
     <Card
       sx={{
         maxWidth: 400,
-        margin: 1,
+        margin: 4,
         backgroundColor: "#3c3c48",
         borderRadius: 3,
       }}
     >
       <CardMedia
         sx={{ height: 250, margin: 2, borderRadius: 2, border: 4 }}
-        image="https://images.theconversation.com/files/485445/original/file-20220920-18478-bj2hb3.jpg?ixlib=rb-1.1.0&rect=15%2C15%2C5160%2C3422&q=45&auto=format&w=496&fit=clip"
+        image={User.photoURL}
         title="green iguana"
       />
       <CardContent>
